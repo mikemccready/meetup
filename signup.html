@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Meetup | Sign up</title>
 	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
-		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
 
 	<form class="form-container">
 		<label for="name">
 			Name
-			<input id="name" type="text" placeholder="John Smith"></input>
+			<input id="name" type="text" placeholder="John Smith" autocomplete="name"></input>
 		</label>
 
 		<label for="email">
 			Email address
-			<input id="email" type="email" placeholder="john.smith@gmail.com"></input>
+			<input id="email" type="email" placeholder="john.smith@gmail.com" autocomplete="email"></input>
 		</label>
 
 		<label for="password">
 			Password
-			<input id="password" type="password" placeholder="Password1234"></input>
+			<input id="password" type="password" placeholder="Password1234" autocomplete="new-password"></input>
 		</label>
 
 		<label for="confirm-password">
@@ -29,14 +31,20 @@
 		</label>
 
 		<div class="optional-fields">
+
+			<label for="country">
+				Country
+				<input id="country" type="text" placeholder="United States" autocomplete="country"></input>
+			</label>
+
 			<label for="job-title">
 				Job title
-				<input id="job-title" type="text" placeholder="Developer"></input>
+				<input id="job-title" type="text" placeholder="Developer" autocomplete="organization-title"></input>
 			</label>
 
 			<label for="employer">
 				Employer
-				<input id="employer" type="text" placeholder="Google"></input>	
+				<input id="employer" type="text" placeholder="Google" autocomplete="organization"></input>	
 			</label>
 
 			<label for="about-me">
