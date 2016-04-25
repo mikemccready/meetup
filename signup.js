@@ -1,5 +1,7 @@
 var passwordField = document.getElementById('password');
 var confirmPasswordField = document.getElementById('confirm-password');
+var validPassword = false;
+var submitBtn = document.getElementById('submit');
 
 var validatePassword = function() {
 	var password = passwordField.value;
@@ -34,27 +36,24 @@ var validatePassword = function() {
 
 	if(passingReq.length === requirements.length) {
 		confirmPasswordField.disabled = false;
+		validPassword = true;
+		return validPassword;
 	}else {
 		confirmPasswordField.disabled = true;
+		validPassword = true;
+		return validPassword;
 	}
-
-
-
-
-
-
-
-	// if(password.length >= 8 && password.length <= 20){
-	// 	document.getElementById('character-length').style.display = 'none';
-	// }else {
-	// 	document.getElementById('character-length').style.display = 'block';
-	// }
-
-	// if(password.match(/\d/g)){
-	// 	document.getElementById('password-number').style.display = 'none';
-	// }else {
-	// 	document.getElementById('password-number').style.display = 'block';
-	// }
 };
 
+var confirmPassword = function() {
+	if(confirmPasswordField.value === passwordField.value) {
+		document.getElementById('confirm-match').style.display = 'none';
+		submitBtn.disabled = false;
+	}else {
+		document.getElementById('confirm-match').style.display = 'block';
+		submitBtn.disabled = true;
+	}
+}
+
 passwordField.addEventListener('keyup', validatePassword)
+confirmPasswordField.addEventListener('keyup', confirmPassword)

@@ -31,6 +31,7 @@
 			Confirm Password
 			<input id="confirm-password" type="password" placeholder="Password1234" required disabled="true"></input>
 		</label>
+		<span id="confirm-match" style="display: none;">Password does not match</span>
 
 		<div class="optional-fields">
 
@@ -54,7 +55,7 @@
 				<input id="about-me" type="text" placeholder="I'm so cool"></input>
 			</label>
 		</div>
-		<input type="submit" value="Submit" />			
+		<input id="submit" type="submit" value="Submit" disabled="true" />			
 	</form>
 
 <script type="text/javascript" src="app.js"></script>
