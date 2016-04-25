@@ -1,5 +1,5 @@
 var passwordField = document.getElementById('password');
-
+var confirmPasswordField = document.getElementById('confirm-password');
 
 var validatePassword = function() {
 	var password = passwordField.value;
@@ -33,7 +33,9 @@ var validatePassword = function() {
 	});	
 
 	if(passingReq.length === requirements.length) {
-		console.log('ready')
+		confirmPasswordField.disabled = false;
+	}else {
+		confirmPasswordField.disabled = true;
 	}
 
 
