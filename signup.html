@@ -24,10 +24,12 @@
 			Password
 			<input id="password" type="password" placeholder="Password1234" autocomplete="new-password" required></input>
 		</label>
+		<span id="character-length">Must be between 8 and 20 characters</span>
+		<span id="password-number">Must contain a number</span>
 
 		<label for="confirm-password">
 			Confirm Password
-			<input id="confirm-password" type="password" placeholder="Password1234" required></input>
+			<input id="confirm-password" type="password" placeholder="Password1234" required disabled="true"></input>
 		</label>
 
 		<div class="optional-fields">
@@ -55,5 +57,7 @@
 		<input type="submit" value="Submit" />			
 	</form>
 
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="signup.js"></script>
 </body>
 </html>
