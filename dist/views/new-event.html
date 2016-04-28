@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Meetup | Sign up</title>
+	<link rel="stylesheet" type="text/css" href="styles/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+
+	<form class="form-container">
+		<label for="event-name">
+			Name of event
+			<input id="event-name" type="text" placeholder="Tequila Shots" autofocus required></input>
+		</label>	
+
+		<label for="event-type">
+			Type of the event
+			<input id="event-type" list="events" name="myEvent" placeholder="Cocktail Hour" />
+		</label>
+		<datalist id="events">
+			<option value="Birthday Party">
+			<option value="Wedding">
+			<option value="Cocktail Hour">
+			<option value="Meet-up">
+			<option value="Special Event">
+		</datalist>
+
+		<label for="host">
+			Host
+			<input id="host" type="text" placeholder="John Smith"></input>
+		</label>	
+
+		<label for="start-time">
+			Start Time
+			<input id="start-time" type="datetime-local" required></input>
+		</label>
+
+		<label for="end-time">
+			End Time
+			<input id="end-time" type="datetime-local" required></input>
+		</label>
+
+		<label for="guest-list">
+			Guest List
+			<input id="guest-list" type="text"></input>
+		</label>	
+
+		<label for="location">
+			Location
+			<input id="location" type="text" required></input>
+		</label>
+		<!-- <button onclick="getLocation()">Try It</button>
+		<p id="demo"></p> -->
+
+		<div class="optional-fields">
+			<label for="additional-info">
+				Additional Info
+				<input id="additional-info" type="text" placeholder="Additional Info"></input>
+			</label>
+		</div>
+		<input type="submit" value="Submit" />			
+	</form>
+
+<script>
+// var x = document.getElementById("demo");
+
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(showPosition);
+//     } else { 
+//         x.innerHTML = "Geolocation is not supported by this browser.";
+//     }
+// }
+
+// function showPosition(position) {
+//     x.innerHTML = "Latitude: " + position.coords.latitude + 
+//     "<br>Longitude: " + position.coords.longitude;	
+// }
+</script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
