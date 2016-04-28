@@ -7,6 +7,11 @@ var browserSync = require('browser-sync').create();
 var eslint = require('gulp-eslint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var babel = require('gulp-babel');
+var sourcemaps = require('gulp-sourcemaps');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+
 
 gulp.task('serve', ['sass', 'lint', 'copy-html', 'copy-images', 'copy-views', 'scripts'], function () {
   browserSync.init({
@@ -40,26 +45,38 @@ gulp.task('copy-html', function(){
 
 gulp.task('copy-images', function(){
   gulp.src('./img/*')
+    .pipe(imagemin({
+      progressive: true,
+      use: [pngquant()]
+    }))  
     .pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('scripts', function() {
   gulp.src('./js/**/*.js')
+    .pipe(babel())
+    .pipe(sourcemaps.init())
     .pipe(concat('all.js'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('scripts-dist', function() {
   gulp.src('./js/**/*.js')
+    .pipe(babel())
+    .pipe(sourcemaps.init())
     .pipe(concat('all.js'))
     .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('sass', function() {
   gulp.src('./sass/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dist/css'))
     .pipe(browserSync.stream());
 });
