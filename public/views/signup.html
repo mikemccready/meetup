@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Meetup | Sign up</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+	<form class="form-container">
+		<label for="name">
+			Name
+			<input id="name" type="text" placeholder="John Smith" autocomplete="name" autofocus required></input>
+		</label>
+
+		<label for="email">
+			Email address
+			<input id="email" type="email" placeholder="john.smith@gmail.com" autocomplete="email" required></input>
+		</label>
+
+		<label for="password">
+			Password
+			<input id="password" type="password" placeholder="Password1234" autocomplete="new-password" required></input>
+		</label>
+		<span id="character-length" style="display: none;">Must be between 8 and 20 characters</span>
+		<span id="password-number" style="display: none;">Must contain a number</span>
+
+		<label for="confirm-password">
+			Confirm Password
+			<input id="confirm-password" type="password" placeholder="Password1234" required disabled="true"></input>
+		</label>
+		<span id="confirm-match" style="display: none;">Password does not match</span>
+
+		<div class="optional-fields">
+
+			<label for="country">
+				Country
+				<input id="country" type="text" placeholder="United States" autocomplete="country"></input>
+			</label>
+
+			<label for="job-title">
+				Job title
+				<input id="job-title" type="text" placeholder="Developer" autocomplete="organization-title"></input>
+			</label>
+
+			<label for="employer">
+				Employer
+				<input id="employer" type="text" placeholder="Google" autocomplete="organization"></input>	
+			</label>
+
+			<label for="about-me">
+				About me
+				<input id="about-me" type="text" placeholder="I'm so cool"></input>
+			</label>
+		</div>
+		<input id="submit" type="submit" value="Submit" disabled="true" />			
+	</form>
+
+<script type="text/javascript" src="../app.js"></script>
+</body>
+</html>

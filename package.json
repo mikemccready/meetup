@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mikemccready/meetup#readme",
   "devDependencies": {
+    "browser-sync": "^2.12.5",
     "express": "^4.13.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
